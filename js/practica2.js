@@ -1,6 +1,6 @@
 let nombre = prompt('cual es tu nombre y apellido?');
 let tipo = prompt('Elije el plan que deseas?\nplato: 0\nmes: 1\naño: 2', 0);
-let ubicacion = prompt('Escribe la direccion para entregar tu vehiculo');
+let ubicacion = prompt('Escribe la direccion para entregar tu comida');
 
 
 function saludar(nombre) {
