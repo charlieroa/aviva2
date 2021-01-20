@@ -150,7 +150,7 @@
               </select>
                         </div>
                         <div class="col-lg-2 form-group mb-0">
-                            <button class="btn btn-primary btn-block h-100" type="submit">Pedir</button>
+                            <button class="btn btn-primary btn-block h-100" type="submit">resumen</button>
                         </div>
                     </div>
                 </form>
@@ -178,8 +178,8 @@
                         <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
                             <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/new-york.jpg" alt="Card image">
                             <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Parrilla Argentina</h6>
-                                <p class="card-text text-sm">La unión entre el fuego y la carne</p>
+                                <h6 class="card-title text-shadow text-uppercase">New York</h6>
+                                <p class="card-text text-sm">The big apple</p>
                             </div>
                         </div>
                     </div>
@@ -187,9 +187,8 @@
                         <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
                             <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/paris.jpg" alt="Card image">
                             <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Carne de la Abuela</h6>
-                                <p class="card-text text-sm">Lentejas Criollas y Carne Dorada
-                                </p>
+                                <h6 class="card-title text-shadow text-uppercase">Paris</h6>
+                                <p class="card-text text-sm">Artist capital of Europe</p>
                             </div>
                         </div>
                     </div>
@@ -206,19 +205,8 @@
                         <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
                             <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/prague.jpg" alt="Card image">
                             <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Pollo a la francesa</h6>
-                                <p class="card-text text-sm">Salsa Cremosa de Vegetales y Vino
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/praguer.jpg" alt="Card image">
-                            <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Bendito Salmón</h6>
-                                <p class="card-text text-sm">Adobado a las Finas Hierbas
-                                </p>
+                                <h6 class="card-title text-shadow text-uppercase">Prague</h6>
+                                <p class="card-text text-sm">City of hundred towers</p>
                             </div>
                         </div>
                     </div>
@@ -360,17 +348,50 @@
         </div>
     </footer>
 
+    <script>
+        // ------------------------------------------------------- //
+        //   Inject SVG Sprite - 
+        //   see more here 
+        //   https://css-tricks.com/ajaxing-svg-sprite/
+        // ------------------------------------------------------ //
+        function injectSvgSprite(path) {
 
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", path, true);
+            ajax.send();
+            ajax.onload = function(e) {
+                var div = document.createElement("div");
+                div.className = 'd-none';
+                div.innerHTML = ajax.responseText;
+                document.body.insertBefore(div, document.body.childNodes[0]);
+            }
+        }
+        // to avoid CORS issues when viewing using file:// protocol, using the demo URL for the SVG sprite
+        // use your own URL in production, please :)
+        // https://demo.bootstrapious.com/directory/1-0/icons/orion-svg-sprite.svg
+        //- injectSvgSprite('${path}icons/orion-svg-sprite.svg'); 
+        injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg');
+    </script>
     <!-- jQuery-->
     <!-- <script src="js/practica1.js"></script> -->
-    <script src="js/practica2.js"></script>
+    <script src="js/practica3.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Magnific Popup - Lightbox for the gallery-->
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth scroll-->
+    <script src="vendor/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
+    <!-- Bootstrap Select-->
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
+    <script src="vendor/object-fit-images/ofi.min.js"></script>
     <!-- Swiper Carousel                       -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
-
+    <script>
+        var basePath = ''
+    </script>
+    <!-- Main Theme JS file    -->
     <script src="js/theme.js"></script>
 </body>
 
