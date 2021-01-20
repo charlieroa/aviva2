@@ -25,7 +25,7 @@ carrito.push(plato4);
 
 const plato5 = {
     comida3: 'plato estandar',
-    comida4: 'postre de natas'
+    precio: 15000
 }
 
 // en vez de utilizar concat utilice spread operator de es6
