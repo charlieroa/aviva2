@@ -1,394 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Simulador-coder</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="all,follow">
-    <!-- Price Slider Stylesheets -->
-    <link rel="stylesheet" href="vendor/nouislider/nouislider.css">
-    <!-- Google fonts - Playfair Display-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
-    <!-- Google fonts - Poppins-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
-    <!-- swiper-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
-    <!-- Magnigic Popup-->
-    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.css">
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="css/custom.css">
-    <!-- Favicon-->
-    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Dely
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+
 </head>
+<!-- Body-->
 
-<body style="padding-top: 0;">
-    <header class="header header-absolute">
-        <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-            <div class="container-fluid">
-                <div class="d-flex align-items-center">
-                    <a class="navbar-brand py-3" href="index.html" style="line-height: 0;"><img src="img/logo.png" alt=""></a>
-
-                </div>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
-                <!-- Navbar Collapse -->
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <form class="form-inline mt-4 mb-2 d-sm-none" action="#" id="searchcollapsed">
-                        <div class="input-label-absolute input-label-absolute-left input-reset w-100">
-                            <label class="label-absolute" for="searchcollapsed_search"><i class="fa fa-search"></i><span class="sr-only">What are you looking for?</span></label>
-                            <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="searchcollapsed_search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-reset btn-sm" type="reset"><i class="fa-times fas">           </i></button>
-                        </div>
-                    </form>
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link" href="#">Ingresar</a></li>
+<body class="toolbar-enabled">
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+    <!-- Sign in / sign up modal-->
+    <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                        <li class="nav-item"><a class="nav-link active" href="#signin-tab" data-toggle="tab" role="tab" aria-selected="true"><i class="czi-unlocked mr-2 mt-n1"></i>Sign in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup-tab" data-toggle="tab" role="tab" aria-selected="false"><i class="czi-user mr-2 mt-n1"></i>Sign up</a></li>
                     </ul>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
-            </div>
-        </nav>
-        <!-- /Navbar -->
-    </header>
-    <!-- Slider main container-->
-    <div class="swiper-container home-slider multi-slider">
-        <!-- Additional required wrapper-->
-        <div class="swiper-wrapper">
-            <!-- Slides-->
-
-            <div class="swiper-slide bg-cover dark-overlay bg-cover-right" style="background-image: url('img/photo/ifood.jpg');">
-                <div class="container h-100">
-                    <div class="d-flex h-100 text-white overlay-content align-items-center" data-swiper-parallax="-500">
-                        <div class="w-100">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <p class="subtitle text-white letter-spacing-3 mb-3 font-weight-light">Cuida tu cuerpo</p>
-                                    <h2 class="display-3 font-weight-bold mb-3" style="line-height: 1">Un plato diferente cada dia</h2>
-                                    <p class="mb-5">Almuerza saludable, fácil y a un precio justo.</p>
-                                </div>
-                            </div>
-                            <div class="row mt-3 mt-md-5">
-                                <div class="col-md-4 mb-2 mb-md-0">
-                                    <a class="media text-reset text-decoration-none hover-animate" href="#">
-                                        <div class="icon-rounded bg-white opacity-7 mr-4">
-                                            <svg class="svg-icon text-dark w-2rem h-2rem">
-                          <use xlink:href="#airplane-mode-1"> </use>
-                        </svg>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5>Un plato</h5>
-                                            <div class="badge badge-light">$15.000</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-4 mb-2 mb-md-0">
-                                    <a class="media text-reset text-decoration-none hover-animate" href="#">
-                                        <div class="icon-rounded bg-white opacity-7 mr-4">
-                                            <svg class="svg-icon text-dark w-2rem h-2rem">
-                          <use xlink:href="#suitcase-1"> </use>
-                        </svg>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5>Plan mensual</h5>
-                                            <div class="badge badge-light">$50.000 cada mes</div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-md-4 mb-2 mb-md-0">
-                                    <a class="media text-reset text-decoration-none hover-animate" href="#">
-                                        <div class="icon-rounded bg-white opacity-7 mr-4">
-                                            <svg class="svg-icon text-dark w-2rem h-2rem">
-                          <use xlink:href="#image-gallery-1"> </use>
-                        </svg>
-                                        </div>
-                                        <div class="media-body">
-                                            <h5>Consume todo el año</h5>
-                                            <div class="badge badge-light">$500.000 pago unico</div>
-                                        </div>
-                                    </a>
-                                </div>
+                <div class="modal-body tab-content py-4">
+                    <form class="needs-validation tab-pane fade show active" autocomplete="off" novalidate id="signin-tab">
+                        <div class="form-group">
+                            <label for="si-email">Email address</label>
+                            <input class="form-control" type="email" id="si-email" placeholder="johndoe@example.com" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="si-password">Password</label>
+                            <div class="password-toggle">
+                                <input class="form-control" type="password" id="si-password" required>
+                                <label class="password-toggle-btn">
+                    <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+                  </label>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group d-flex flex-wrap justify-content-between">
+                            <div class="custom-control custom-checkbox mb-2">
+                                <input class="custom-control-input" type="checkbox" id="si-remember">
+                                <label class="custom-control-label" for="si-remember">Remember me</label>
+                            </div><a class="font-size-sm" href="#">Forgot password?</a>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-shadow" type="submit">Sign in</button>
+                    </form>
+                    <form class="needs-validation tab-pane fade" autocomplete="off" novalidate id="signup-tab">
+                        <div class="form-group">
+                            <label for="su-name">Full name</label>
+                            <input class="form-control" type="text" id="su-name" placeholder="John Doe" required>
+                            <div class="invalid-feedback">Please fill in your name.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="su-email">Email address</label>
+                            <input class="form-control" type="email" id="su-email" placeholder="johndoe@example.com" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="su-password">Password</label>
+                            <div class="password-toggle">
+                                <input class="form-control" type="password" id="su-password" required>
+                                <label class="password-toggle-btn">
+                    <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+                  </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="su-password-confirm">Confirm password</label>
+                            <div class="password-toggle">
+                                <input class="form-control" type="password" id="su-password-confirm" required>
+                                <label class="password-toggle-btn">
+                    <input class="custom-control-input" type="checkbox"><i class="czi-eye password-toggle-indicator"></i><span class="sr-only">Show password</span>
+                  </label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-shadow" type="submit">Sign up</button>
+                    </form>
                 </div>
             </div>
-        </div>
-        <div class="swiper-pagination swiper-pagination-white"></div>
-        <div class="swiper-nav d-none d-lg-block">
-            <div class="swiper-button-prev" id="homePrev"></div>
-            <div class="swiper-button-next" id="homeNext"></div>
         </div>
     </div>
-    <section class="bg-gray-100">
-        <div class="container pb-lg-3">
-            <div class="search-bar rounded p-3 p-lg-4 position-relative mt-n4 z-index-20">
-                <form action="#">
-                    <div class="row">
-                        <div class="col-lg-4 d-flex align-items-center form-group">
-                            <input class="form-control border-0 shadow-0" type="search" name="search" placeholder="Ubicación">
-                        </div>
-                        <div class="col-md-6 col-lg-3 d-flex align-items-center form-group">
-                            <div class="input-label-absolute input-label-absolute-right w-100">
-                                <label class="label-absolute" for="location"><i class="fa fa-crosshairs"></i><span class="sr-only">City</span></label>
-                                <input class="form-control border-0 shadow-0" type="text" name="location" placeholder="Cuando lo quieres?" id="location">
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-3 d-flex align-items-center form-group no-divider">
-                            <select class="selectpicker" title="Tipo de menú" data-style="btn-form-control">
-                <option value="small">Un plato</option>
-                <option value="medium">Plan mensual</option>
-                <option value="large">Plan anual</option>
-              </select>
-                        </div>
-                        <div class="col-lg-2 form-group mb-0">
-                            <button class="btn btn-primary btn-block h-100" type="submit">resumen</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
+    <!-- Navbar-->
+    <!-- Floating Navbar (Transparent version)-->
 
-
-
-    <section class="py-6 bg-gray-100">
+    <header class="navbar d-block navbar-floating navbar-sticky navbar-expand-lg navbar-dark">
         <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-8">
-                    <p class="subtitle text-primary">El menú de hoy</p>
-                    <h2>Platos</h2>
+            <a class="navbar-brand d-none d-sm-block mr-4 order-lg-1" href="index.html" style="min-width: 7rem;"><img width="142" src="img/logo-dark.png" alt="Cartzilla" /></a>
+            <a class="navbar-brand d-sm-none mr-2 order-lg-1" href="index.html" style="min-width: 4.625rem;"><img width="74" src="img/logo-icon.png" alt="Cartzilla" /></a>
+            <div class="navbar-toolbar d-flex align-items-center order-lg-3">
+                <a class="navbar-tool ml-2" href="#signin-modal" data-toggle="modal">
+                    <span class="navbar-tool-tooltip">Account</span>
+                    <div class="navbar-tool-icon-box"><i class="navbar-tool-icon czi-user"></i></div>
+                </a>
+                <div class="navbar-tool dropdown ml-3"><a class="navbar-tool-icon-box bg-secondary dropdown-toggle" href="#"><!--<span class="navbar-tool-label">3</span>--><i class="navbar-tool-icon czi-cart"></i></a>
+                    <!-- Cart dropdown-->
+                    <div class="dropdown-menu dropdown-menu-right" style="width: 20rem;" id="carrito">
+                        <div class="widget widget-cart px-3 pt-2 pb-4">
+                            <div style="height: 15rem;" data-simplebar data-simplebar-auto-hide="false" id="listado-carrito">
+                            </div>
+                            <a class="btn btn-outline-secondary btn-sm btn-block" href="#" id="vaciar-carrito"><i class="czi-close-circle mr-2 font-size-base align-middle" ></i>Eliminar todo</a>
+                            <a class="btn btn-primary btn-sm btn-block" href="#"><i class="czi-money-bag mr-2 font-size-base align-middle" ></i>Pagar</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-4 d-lg-flex align-items-center justify-content-end"><a class="text-muted text-sm" href="#">
-               Ver todos<i class="fas fa-angle-double-right ml-2"></i></a></div>
             </div>
-            <div class="swiper-container guides-slider mx-n2 pt-3">
-                <!-- Additional required wrapper-->
-                <div class="swiper-wrapper pb-5">
-                    <!-- Slides-->
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/new-york.jpg" alt="Card image">
-                            <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Asado Argentico</h6>
-                                <p class="card-text text-sm">Plato 1</p>
+        </div>
+        </div>
+        <!-- Search collapse-->
+        <div class="search-box collapse" id="searchBox">
+            <div class="container py-2">
+                <div class="input-group-overlay">
+                    <div class="input-group-prepend-overlay"><span class="input-group-text"><i class="czi-search"></i></span></div>
+                    <input class="form-control prepended-form-control" type="text" placeholder="What do you need?">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section-->
+    <section class="bg-darker bg-size-cover bg-position-center py-5 py-lg-10" style="background-image: url(img/food-delivery/hero-bg.jpg);">
+        <div class="container mt-4 mt-lg-3 pt-5 pb-10">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-7 col-md-8 col-sm-10 text-center">
+                    <h5 class="text-light font-weight-light">Cuida tu cuerpo</h5>
+                    <div class="h1 text-light mb-3 pb-4">Un plato diferente todos los dias, ¿Donde te encuentras?:
+                        <div class="dropdown d-inline-block ml-1 pb-5"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Bogotá</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item font-size-base" href="#">Medellin</a>
+                                <a class="dropdown-item font-size-base" href="#">Chia</a>
+                                <a class="dropdown-item font-size-base" href="#">Cajica</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/paris.jpg" alt="Card image">
-                            <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Sudado de pollo</h6>
-                                <p class="card-text text-sm">Plato 2</p>
+                        <!-- Inline form -->
+                        <!-- Forms validation: status tooltips -->
+                        <form class="needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-md-4 form-group">
+
+                                    <select class="form-control custom-select" id="validationTooltip03" required>
+          <option value="">Menú</option>
+          
+        </select>
+
+                                </div>
+                                <div class="col-md-4 form-group">
+
+                                    <select class="form-control custom-select" id="validationTooltip04" required>
+          <option value="">Plan</option>
+          <option value="Arizona">Un plato</option>
+          <option value="Colorado">Suscripción mensual</option>
+          <option value="Florida">Suscripción anual</option>     
+        </select>
+
+                                </div>
+                                <div class="col-md-4">
+
+                                    <button class="btn btn-primary" type="submit">Encontrar mi plato</button>
+
+                                </div>
+
                             </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/barcelona.jpg" alt="Card image">
-                            <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Cociaca</h6>
-                                <p class="card-text text-sm">Plato 3</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="category.html"></a><img class="bg-image" src="img/photo/prague.jpg" alt="Card image">
-                            <div class="card-body overlay-content">
-                                <h6 class="card-title text-shadow text-uppercase">Arroz con pollo</h6>
-                                <p class="card-text text-sm">Plato 4</p>
-                            </div>
-                        </div>
+
+
+                        </form>
                     </div>
                 </div>
-                <div class="swiper-pagination d-md-none"> </div>
+            </div>
+    </section>
+
+    <!-- Categories (cuisine) grid-->
+    <section class="container py-4 my-lg-3 py-sm-5" id="listado-menu">
+        <h2 class="text-center pt-4 pt-sm-3">Trending food in your city</h2>
+        <p class="text-muted text-center mb-5">Choose what you want and we dilever it to you</p>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class=" info-cardcard border-0 box-shadow">
+                    <a href="#" data-id="1"> <img class="card-img-top" src="img/food-delivery/category/01.jpg" alt="Noodles" /></a>
+                    <h3 class="h5 mt-1 card-body py-2 text-center">Noodles1</h3>
+                    <p class="h5 py-2 text-center">$<span class="precio">15000</span></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class=" info-cardcard border-0 box-shadow">
+                    <a href="#" data-id="2"> <img class="card-img-top" src="img/food-delivery/category/02.jpg" alt="Noodles" /></a>
+                    <h3 class="h5 mt-1 card-body py-2 text-center">Noodles2</h3>
+                    <p class="h5 py-2 text-center">$<span class="precio">15000</span></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class=" info-cardcard border-0 box-shadow">
+                    <a href="#" data-id="3"> <img class="card-img-top" src="img/food-delivery/category/03.jpg" alt="Noodles" /></a>
+                    <h3 class="h5 mt-1 card-body py-2 text-center">Noodles3</h3>
+                    <p class="h5 py-2 text-center">$<span class="precio">15000</span></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class=" info-cardcard border-0 box-shadow">
+                    <a href="#" data-id="4"> <img class="card-img-top" src="img/food-delivery/category/04.jpg" alt="Noodles" /></a>
+                    <h3 class="h5 mt-1 card-body py-2 text-center">Noodles4</h3>
+                    <p class="h5 py-2 text-center">$<span class="precio">15000</span></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class=" info-cardcard border-0 box-shadow">
+                    <a href="#" data-id="5"> <img class="card-img-top" src="img/food-delivery/category/05.jpg" alt="Noodles" /></a>
+                    <h3 class="h5 mt-1 card-body py-2 text-center">Noodles5</h3>
+                    <p class="h5 py-2 text-center">$<span class="precio">15000</span></p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-grid-gutter">
+                <div class=" info-cardcard border-0 box-shadow">
+                    <a href="#" data-id="6"> <img class="card-img-top" src="img/food-delivery/category/06.jpg" alt="Noodles" /></a>
+                    <h3 class="h5 mt-1 card-body py-2 text-center">Noodles6</h3>
+                    <p class="h5 py-2 text-center">$<span class="precio">15000</span></p>
+                </div>
             </div>
         </div>
     </section>
-
-    <!-- Instagram-->
-    <section>
-        <div class="container-fluid px-0">
-            <div class="swiper-container instagram-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-1.jpg" alt=" "></a>
+    <!-- Mobile app CTA-->
+    <section class="bg-primary bg-size-cover bg-position-center pt-5" style="background-image: url(img/food-delivery/mobile-app-bg.jpg);">
+        <div class="container pt-2 pt-sm-0">
+            <div class="row align-items-center">
+                <div class="col-xl-4 col-lg-5 col-sm-6 offset-xl-2 offset-lg-1 mt-md-n5 text-center text-sm-left">
+                    <h2 class="text-light mb-3">Ya tienes nuestra app?</h2>
+                    <p class="text-light opacity-70 mb-0 d-block d-sm-none d-md-block">Te ayudamos a perder peso aprendiendo a comer, descarga ya nuestra app.</p>
+                    <div class="mt-4 pt-2"><a class="btn-market btn-apple mr-3 mb-2" href="#" role="button"><span class="btn-market-subtitle">Download on the</span><span class="btn-market-title">App Store</span></a>
+                        <a class="btn-market btn-google mb-2" href="#" role="button"><span class="btn-market-subtitle">Download on the</span><span class="btn-market-title">Google Play</span></a>
                     </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-2.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-3.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-4.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-5.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-6.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-7.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-8.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-9.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-10.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-11.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-12.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-13.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-14.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-10.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-11.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-12.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-13.jpg" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="img/instagram/instagram-14.jpg" alt=" "></a>
-                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6 offset-lg-1 pt-5 pt-sm-3"><img class="d-block mx-auto mx-sm-0" width="331" src="img/food-delivery/phone.png" alt="Mobile App Screen" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Become Courier / Partner CTA-->
+    <section class="container pb-4 pt-lg-5 pb-sm-5">
+        <div class="row pt-4 mt-2 mt-lg-3 mb-md-2">
+            <div class="col-lg-6 mb-grid-gutter">
+                <div class="media d-block d-sm-flex justify-content-between align-items-center bg-faded-info rounded-lg">
+                    <div class="media-body pt-5 py-sm-5 px-4 pl-md-5 pr-md-0 text-center text-sm-left">
+                        <h2>Se un delytendero</h2>
+                        <p class="text-muted pb-2">Entrega nuestros productos y se parte de nuestro equipo.</p><a class="btn btn-primary" href="#">Se parte</a>
+                    </div><img class="d-block mx-auto mx-sm-0" width="272" src="img/food-delivery/courier.png" alt="Become a Courier" />
+                </div>
+            </div>
+            <div class="col-lg-6 mb-grid-gutter">
+                <div class="media d-block d-sm-flex justify-content-between align-items-center bg-faded-warning rounded-lg">
+                    <div class="media-body pt-5 py-sm-5 px-4 pl-md-5 pr-md-0 text-center text-sm-left">
+                        <h2>Se un delypunto</h2>
+                        <p class="text-muted pb-2">Buscamos centros de acopio.</p><a class="btn btn-primary" href="#">Se parte</a>
+                    </div><img class="d-block mx-auto mx-sm-0" width="269" src="img/food-delivery/chef.png" alt="Become a Partner" />
                 </div>
             </div>
         </div>
     </section>
     <!-- Footer-->
-    <footer class="position-relative z-index-10 d-print-none">
-        <!-- Main block - menus, subscribe form-->
-        <div class="py-6 bg-gray-200 text-muted">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <div class="font-weight-bold text-uppercase text-dark mb-3">Dely</div>
-                        <p>Almuerza saludable, fácil y a un precio justo..</p>
-                        <ul class="list-inline">
-                            <li class="list-inline-item"><a class="text-muted text-hover-primary" href="#" target="_blank" title="twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a class="text-muted text-hover-primary" href="#" target="_blank" title="facebook"><i class="fab fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a class="text-muted text-hover-primary" href="#" target="_blank" title="instagram"><i class="fab fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a class="text-muted text-hover-primary" href="#" target="_blank" title="pinterest"><i class="fab fa-pinterest"></i></a></li>
-                            <li class="list-inline-item"><a class="text-muted text-hover-primary" href="#" target="_blank" title="vimeo"><i class="fab fa-vimeo"></i></a></li>
+    <footer class="bg-darker pt-5">
+        <div class="container pt-2">
+            <div class="row pb-2">
+                <div class="col-lg-2 col-sm-4 pb-2 mb-4">
+                    <div class="mt-n1">
+                        <a class="d-inline-block align-middle" href="#"><img class="d-block mb-4" width="117" src="img/footer-logo-light.png" alt="Cartzilla" /></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="widget widget-links widget-light pb-2 mb-4">
+                        <h3 class="widget-title text-light">Trabaja con nosotros</h3>
+                        <ul class="widget-list">
+                            <li class="widget-list-item"><a class="widget-list-link" href="#">delytenderos</a></li>
+                            <li class="widget-list-item"><a class="widget-list-link" href="#">Delypunto</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
-                        <h6 class="text-uppercase text-dark mb-3">Pide tu plato</h6>
-                        <ul class="list-unstyled">
-                            <li><a class="text-muted" href="index.html">Un plato     </a></li>
-                            <li><a class="text-muted" href="category-rooms.html">Plan mensual</a></li>
-                            <li><a class="text-muted" href="category-2-rooms.html">Plan anual </a></li>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="widget widget-links widget-light pb-2 mb-4">
+                        <h3 class="widget-title text-light">¿Necesitas ayuda?</h3>
+                        <ul class="widget-list">
+                            <li class="widget-list-item"><a class="widget-list-link" href="#">Soporte</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
-                        <h6 class="text-uppercase text-dark mb-3">Trabaja con nosotros</h6>
-                        <ul class="list-unstyled">
-                            <li><a class="text-muted" href="compare.html">Se un delyrepartidor                               </a></li>
-                            </a>
-                            </li>
+                </div>
+                <div class="col-lg-2 col-sm-4">
+                    <div class="widget widget-links widget-light pb-2 mb-4">
+                        <h3 class="widget-title text-light">Síguenos</h3>
+                        <ul class="widget-list">
+                            <li class="widget-list-item"><a class="widget-list-link" href="#">Facebook</a></li>
+                            <li class="widget-list-item"><a class="widget-list-link" href="#">Twitter</a></li>
+                            <li class="widget-list-item"><a class="widget-list-link" href="#">Instagram</a></li>
                         </ul>
                     </div>
-                    <div class="col-lg-4">
-                        <h6 class="text-uppercase text-dark mb-3">Come sano y dely</h6>
-                        <p class="mb-3"> Agenda tu pedido el dia anterior o planealo todo le mes.</p>
-                        <form action="#" id="newsletter-form">
-                            <div class="input-group mb-3">
-                                <input class="form-control bg-transparent border-dark border-right-0" type="email" placeholder="Tienes preguntas?" aria-label="Your Email Address">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-dark border-left-0" type="submit"> <i class="fa fa-paper-plane text-lg"></i></button>
-                                </div>
-                            </div>
-                        </form>
+                </div>
+                <div class="col-lg-4 col-sm-8">
+                    <div class="widget pb-2 mb-4">
+                        <h3 class="widget-title text-light pb-1">Descarga nuestra app</h3>
+                        <div class="d-flex flex-wrap"><a class="btn-market btn-apple border border-light mr-3 mb-2" href="#" role="button"><span class="btn-market-subtitle">Download on the</span><span class="btn-market-title">App Store</span></a><a class="btn-market btn-google border border-light mb-2"
+                                href="#" role="button"><span class="btn-market-subtitle">Download on the</span><span class="btn-market-title">Google Play</span></a></div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Copyright section of the footer-->
-        <div class="py-4 font-weight-light bg-gray-800 text-gray-300">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-md-6 text-center text-md-left">
-                        <p class="text-sm mb-md-0">&copy; 2020, dely todos los derechos reservados.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="list-inline mb-0 mt-2 mt-md-0 text-center text-md-right">
-                            <li class="list-inline-item"><img class="w-2rem" src="img/visa.svg" alt="..."></li>
-                            <li class="list-inline-item"><img class="w-2rem" src="img/mastercard.svg" alt="..."></li>
-                        </ul>
-                    </div>
-                </div>
+            <hr class="hr-light mt-md-2 pb-4 mb-3">
+            <div class="d-md-flex justify-content-between pb-1">
+                <div class="pb-4 font-size-xs text-light opacity-50 text-center text-md-left">© All rights reserved.<a class="text-light" href="#" target="_blank" rel="noopener"> Charlie Roa</a></div>
             </div>
         </div>
     </footer>
+    <!-- Toolbar for handheld devices-->
 
-    <script>
-        // ------------------------------------------------------- //
-        //   Inject SVG Sprite - 
-        //   see more here 
-        //   https://css-tricks.com/ajaxing-svg-sprite/
-        // ------------------------------------------------------ //
-        function injectSvgSprite(path) {
-
-            var ajax = new XMLHttpRequest();
-            ajax.open("GET", path, true);
-            ajax.send();
-            ajax.onload = function(e) {
-                var div = document.createElement("div");
-                div.className = 'd-none';
-                div.innerHTML = ajax.responseText;
-                document.body.insertBefore(div, document.body.childNodes[0]);
-            }
-        }
-        // to avoid CORS issues when viewing using file:// protocol, using the demo URL for the SVG sprite
-        // use your own URL in production, please :)
-        // https://demo.bootstrapious.com/directory/1-0/icons/orion-svg-sprite.svg
-        //- injectSvgSprite('${path}icons/orion-svg-sprite.svg'); 
-        injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg');
-    </script>
-    <!-- jQuery-->
-    <!-- <script src="js/practica1.js"></script> -->
-    <script src="js/practica3.js"></script>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Magnific Popup - Lightbox for the gallery-->
-    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-    <!-- Smooth scroll-->
-    <script src="vendor/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
-    <!-- Bootstrap Select-->
-    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
-    <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
-    <script src="vendor/object-fit-images/ofi.min.js"></script>
-    <!-- Swiper Carousel                       -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
-    <script>
-        var basePath = ''
-    </script>
-    <!-- Main Theme JS file    -->
-    <script src="js/theme.js"></script>
+    <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">   </i></a>
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="js/coderhouse.js"></script>
+    <script src="vendor/jquery/dist/menu.js"></script>
+    <script src="vendor/jquery/dist/jquery.slim.min.js"></script>
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
 </body>
+
+<!-- Mirrored from demo.createx.studio/cartzilla/home-food-delivery.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 30 Oct 2020 02:45:53 GMT -->
 
 </html>
