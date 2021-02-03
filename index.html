@@ -126,60 +126,79 @@
     </header>
 
     <!-- Hero section-->
-    <section class="bg-darker bg-size-cover bg-position-center py-5 py-lg-10" style="background-image: url(img/food-delivery/hero-bg.jpg);">
-        <div class="container mt-4 mt-lg-3 pt-5 pb-10">
+    <section class="bg-darker bg-size-cover bg-position-center py-5 py-lg-7" style="background-image: url(img/food-delivery/hero-bg.jpg);">
+        <div class="container mt-4 mt-lg-3 pt-5 pb-7">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-7 col-md-8 col-sm-10 text-center">
                     <h5 class="text-light font-weight-light">Cuida tu cuerpo</h5>
                     <div class="h1 text-light mb-3 pb-4">Un plato diferente todos los dias, ¿Donde te encuentras?:
-                        <div class="dropdown d-inline-block ml-1 pb-5"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Bogotá</a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item font-size-base" href="#">Medellin</a>
-                                <a class="dropdown-item font-size-base" href="#">Chia</a>
-                                <a class="dropdown-item font-size-base" href="#">Cajica</a>
+                        <div class="dropdown d-inline-block ml-1 pb-5 pt-4">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="direccion" placeholder="escribe tu direccion">
                             </div>
-                        </div>
-                        <!-- Inline form -->
-                        <!-- Forms validation: status tooltips -->
-                        <form class="needs-validation" novalidate>
-                            <div class="row">
-                                <div class="col-md-4 form-group">
+                            <!-- Inline form -->
+                            <!-- Forms validation: status tooltips -->
+                            <form class="needs-validation" novalidate>
+                                <div class="row">
+                                    <div class="col-md-4 form-group">
 
-                                    <select class="form-control custom-select" id="validationTooltip03" required>
-          <option value="">Menú</option>
-          
-        </select>
+                                        <select class="form-control" id="menu">
+                                <option value="">Menú</option>
+                                
+                                </select>
 
-                                </div>
-                                <div class="col-md-4 form-group">
+                                    </div>
+                                    <div class="col-md-4 form-group">
 
-                                    <select class="form-control custom-select" id="validationTooltip04" required>
-          <option value="">Plan</option>
+                                        <select class="form-control" id="plan">
+          <option value="">Buscar un plan</option>
           <option value="Arizona">Un plato</option>
           <option value="Colorado">Suscripción mensual</option>
           <option value="Florida">Suscripción anual</option>     
         </select>
 
+                                    </div>
+                                    <div class="col-md-4" style="margin-top:-0.3rem">
+
+                                        <button class="btn btn-primary" type="submit" id="enviar">Buscar</button>
+
+                                    </div>
+
                                 </div>
-                                <div class="col-md-4">
-
-                                    <button class="btn btn-primary" type="submit">Encontrar mi plato</button>
-
-                                </div>
-
-                            </div>
 
 
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- Success alert -->
+        <!--<div id="alert-busqueda" class="d-flex align-items-center flex-column bd-highlight" id="alerta">
+            <i class="bi bi-star"></i>
+            <span id="alert-busqueda-texto"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+               </button>
+        </div> -->
+
+        <div class="d-flex align-items-center flex-column bd-highlight" id="alerta">
+            <div class="p-2 bd-highlight">
+                <div id="alert-busqueda" class="fade show" role="alert">
+                    <span id="alert-busqueda-texto"></span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <!-- Categories (cuisine) grid-->
     <section class="container py-4 my-lg-3 py-sm-5" id="listado-menu">
-        <h2 class="text-center pt-4 pt-sm-3">Trending food in your city</h2>
-        <p class="text-muted text-center mb-5">Choose what you want and we dilever it to you</p>
+        <h2 class="text-center pt-4 pt-sm-3">Mira nuestro menú</h2>
+        <p class="text-muted text-center mb-5">Elije tu antojo</p>
         <div class="row">
             <div class="col-md-4 col-sm-6 mb-grid-gutter">
                 <div class=" info-cardcard border-0 box-shadow">

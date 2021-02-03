@@ -3,6 +3,11 @@ const carrito = document.querySelector('#carrito');
 const listaMenu = document.querySelector('#listado-menu');
 const contenedorCarrito = document.querySelector('.dropdown-menu #listado-carrito');
 const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
+//buscador
+const btnEnviar = document.querySelector('#enviar');
+const ubicacion = document.querySelector('#direccion');
+const menu = document.querySelector('#menu');
+const plan = document.querySelector('#plan');
 
 //arreglo del carrito
 let articulosCarrito = [];
@@ -10,7 +15,15 @@ let articulosCarrito = [];
 
 cargarEventListeners();
 
+
+//eventos
 function cargarEventListeners() {
+    //buscador
+    // document.addEventListener('DOMContentLoaded', inicioApp);
+    ubicacion.addEventListener('blur', validarFormulario);
+    menu.addEventListener('blur', validarMenu);
+    plan.addEventListener('blur', validarMenu);
+
     // Dispara cuando se presiona "Agregar Carrito"
     listaMenu.addEventListener('click', agregarMenu);
     carrito.addEventListener('click', eliminarMenu);
@@ -18,8 +31,51 @@ function cargarEventListeners() {
         articulosCarrito = [];
         vaciarCarrito();
     })
+}
+
+//buscador de menu//
+
+// function inicioApp() {
+//     btnEnviar.disabled = true;
+//     btnEnviar.textContent = 'Sin datos';
+// }
+
+
+function validarFormulario(campo) {
+    if (campo.target.value.length > 0) {
+
+        //elimina los errores del Dom
+        const error = document.querySelector('#alerta')
+        error.remove();
+        campo.target.classList.remove('error-direccion');
+        campo.target.classList.add('validando-direccion');
+
+    } else {
+        campo.target.classList.add('error-direccion');
+        mostrarError("Escribe una dirección valida por favor");
+    }
 
 }
+
+function validarMenu(campo) {
+    if (campo.target.value.length > 0) {
+        campo.classList.add('validando-direccion');
+        campo.classList.remove('error-direccion');
+    } else {
+        campo.target.classList.add('error-direccion');
+        mostrarError("Selecciona una opción");
+    }
+
+}
+
+
+function mostrarError(mensaje) {
+    document.getElementById("alert-busqueda").className =
+        "alert alert-primary alert-dismissible";
+    document.getElementById("alert-busqueda-texto").innerText =
+        mensaje;
+}
+
 
 // Funciones
 // Función que añade menu al carrito
@@ -86,9 +142,6 @@ function eliminarMenu(e) {
     }
 
 }
-
-
-
 
 // Muestra el menu seleccionado en el Carrito
 function carritoHTML() {
