@@ -1,3 +1,28 @@
+//aplicando jquery
+
+$(document).ready(function() {
+    console.log('probando jquery');
+})
+
+let $modalOverlay = $('.modal-overlay'),
+    $modalContainer = $('.modal-container'),
+    $modalTrigger = $('.modal-trigger'),
+    $modalClose = $('.modal-close');
+
+$modalTrigger.on('click', function() {
+    $modalContainer.toggleClass('modal--show');
+});
+
+$modalOverlay.on('click', function() {
+    $modalContainer.toggleClass('modal--show');
+});
+
+$modalClose.on('click', function() {
+    $modalContainer.removeClass('modal--show');
+});
+
+
+
 //variables
 const carrito = document.querySelector('#carrito');
 const listaMenu = document.querySelector('#listado-menu');
@@ -7,7 +32,6 @@ const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
 const btnEnviar = document.querySelector('#enviar');
 const ubicacion = document.querySelector('#direccion');
 const menu = document.querySelector('#menu');
-const plan = document.querySelector('#plan');
 
 //arreglo del carrito
 let articulosCarrito = [];
@@ -22,8 +46,6 @@ function cargarEventListeners() {
     // document.addEventListener('DOMContentLoaded', inicioApp);
     ubicacion.addEventListener('blur', validarFormulario);
     menu.addEventListener('blur', validarMenu);
-    plan.addEventListener('blur', validarMenu);
-
     // Dispara cuando se presiona "Agregar Carrito"
     listaMenu.addEventListener('click', agregarMenu);
     carrito.addEventListener('click', eliminarMenu);
@@ -59,15 +81,21 @@ function validarFormulario(campo) {
 
 function validarMenu(campo) {
     if (campo.target.value.length > 0) {
-        campo.classList.add('validando-direccion');
-        campo.classList.remove('error-direccion');
+        const errores = document.querySelector('#alerta')
+        errores.remove();
+        campo.target.classList.remove('error-direccion');
+        campo.target.classList.add('validando-direccion');
     } else {
         campo.target.classList.add('error-direccion');
         mostrarError("Selecciona una opción");
     }
-
 }
 
+
+
+if (ubicacion.value !== '' && menu.value !== '') {
+    btnEnviar.disabled = false;
+}
 
 function mostrarError(mensaje) {
     document.getElementById("alert-busqueda").className =

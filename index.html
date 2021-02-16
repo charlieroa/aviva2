@@ -6,7 +6,7 @@
     <title>Dely
     </title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
     <!-- Main Theme Styles + Bootstrap-->
     <link rel="stylesheet" media="screen" href="css/theme.min.css">
 
@@ -19,6 +19,13 @@
       <iframe src="http://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
     </noscript>
     <!-- Sign in / sign up modal-->
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="modal-close"><i class="fa fa-times fa-3"></i></div>
+            <iframe src="https://www-foody-com-co.filesusr.com/html/3c9730_b8fe5568b5da2f1861aabaf550ef15ae.html" width=590 height=450></iframe> </div>
+    </div>
+
+    <div class="modal-overlay"></div>
     <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -126,73 +133,44 @@
     </header>
 
     <!-- Hero section-->
-    <section class="bg-darker bg-size-cover bg-position-center py-5 py-lg-7" style="background-image: url(img/food-delivery/hero-bg.jpg);">
-        <div class="container mt-4 mt-lg-3 pt-5 pb-7">
+    <section class="bg-darker bg-size-cover bg-position-center py-5 py-lg-10" style="background-image: url(img/food-delivery/hero-bg.jpg);">
+        <div class="container mt-4 mt-lg-3 pt-5 pb-10">
             <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-7 col-md-8 col-sm-10 text-center">
-                    <h5 class="text-light font-weight-light">Cuida tu cuerpo</h5>
-                    <div class="h1 text-light mb-3 pb-4">Un plato diferente todos los dias, ¿Donde te encuentras?:
-                        <div class="dropdown d-inline-block ml-1 pb-5 pt-4">
-                            <div class="form-group">
-                                <input class="form-control" type="text" id="direccion" placeholder="escribe tu direccion">
+                <div class="col-xl-6 col-lg-7 col-md-8 col-sm-10 text-center">
+                    <h5 class="text-light font-weight-light">tu app #1 en comida saludable <span class="badge badge-secondary modal-trigger">mira nuestra cobertura</span> </h5>
+                    <div class="h1 text-light mb-3 pb-4">Entregamos tu comida en estas localidades
+                        <div class="dropdown d-inline-block ml-1"><a class="dropdown-toggle" href="#" data-toggle="dropdown">Usaquen</a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item font-size-base" href="#">Chico</a>
+                                <a class="dropdown-item font-size-base" href="#">Suba</a>
+                                <a class="dropdown-item font-size-base" href="#">Engativa</a>
                             </div>
-                            <!-- Inline form -->
-                            <!-- Forms validation: status tooltips -->
-                            <form class="needs-validation" novalidate>
-                                <div class="row">
-                                    <div class="col-md-4 form-group">
-
-                                        <select class="form-control" id="menu">
-                                <option value="">Menú</option>
-                                
-                                </select>
-
-                                    </div>
-                                    <div class="col-md-4 form-group">
-
-                                        <select class="form-control" id="plan">
-          <option value="">Buscar un plan</option>
-          <option value="Arizona">Un plato</option>
-          <option value="Colorado">Suscripción mensual</option>
-          <option value="Florida">Suscripción anual</option>     
-        </select>
-
-                                    </div>
-                                    <div class="col-md-4" style="margin-top:-0.3rem">
-
-                                        <button class="btn btn-primary" type="submit" id="enviar">Buscar</button>
-
-                                    </div>
-
-                                </div>
-
-
-                            </form>
                         </div>
                     </div>
+                    <!-- Forms validation: status text -->
+                    <form class="needs-validation" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input class="form-control" type="text" id="direccion" placeholder="escribe tu direccion" id="validationCustom01">
+                                <div class="valid-feedback">Looks good!</div>
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <select class="form-control" id="menu">
+                                    <option value="">Selecciona tu menú...</option>
+                                    <option value="Arizona">Comida tipica</option>
+                                    <option value="Colorado">Saludable</option>
+                                    <option value="Florida">Vegetareana</option>
+                                    <option value="Indiana">Antojos</option>                                 
+                                    </select>
+                            </div>
+
+                        </div>
+                    </form>
+                    <a class="btn btn-primary" href="#cuisine" data-scroll>Encontrar mi plato</a>
+
                 </div>
             </div>
         </div>
-        <!-- Success alert -->
-        <!--<div id="alert-busqueda" class="d-flex align-items-center flex-column bd-highlight" id="alerta">
-            <i class="bi bi-star"></i>
-            <span id="alert-busqueda-texto"></span>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                   <span aria-hidden="true">&times;</span>
-               </button>
-        </div> -->
-
-        <div class="d-flex align-items-center flex-column bd-highlight" id="alerta">
-            <div class="p-2 bd-highlight">
-                <div id="alert-busqueda" class="fade show" role="alert">
-                    <span id="alert-busqueda-texto"></span>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
     </section>
 
     <!-- Categories (cuisine) grid-->
@@ -335,8 +313,8 @@
 
     <!-- Back To Top Button--><a class="btn-scroll-top" href="#top" data-scroll><span class="btn-scroll-top-tooltip text-muted font-size-sm mr-2">Top</span><i class="btn-scroll-top-icon czi-arrow-up">   </i></a>
     <!-- Vendor scrits: js libraries and plugins-->
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/coderhouse.js"></script>
-    <script src="vendor/jquery/dist/menu.js"></script>
     <script src="vendor/jquery/dist/jquery.slim.min.js"></script>
     <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="vendor/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
