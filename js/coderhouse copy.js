@@ -1,7 +1,5 @@
 //aplicando jquery
 
-
-
 let $modalOverlay = $('.modal-overlay'),
     $modalContainer = $('.modal-container'),
     $modalTrigger = $('.modal-trigger'),
@@ -36,144 +34,55 @@ let mostrarMenu = [];
 
 //llamar por ajax menu
 
-let listado_comidas = [{
-        idMeal: 1,
-        strMealThumb: 'img/food-delivery/category/01.jpg',
-        strMeal: 'Noodles1',
-        precio: 10000,
-    },
-
-    {
-        idMeal: 2,
-        strMealThumb: 'img/food-delivery/category/02.jpg',
-        strMeal: 'Noodles2',
-        precio: 20000,
-    },
-
-    {
-        idMeal: 3,
-        strMealThumb: 'img/food-delivery/category/03.jpg',
-        strMeal: 'Noodles3',
-        precio: 30000,
-    },
-
-    {
-        idMeal: 4,
-        strMealThumb: 'img/food-delivery/category/04.jpg',
-        strMeal: 'Noodles4',
-        precio: 40000,
-    },
-
-    {
-        idMeal: 5,
-        strMealThumb: 'img/food-delivery/category/05.jpg',
-        strMeal: 'Noodles5',
-        precio: 50000,
-    },
-
-    {
-        idMeal: 6,
-        strMealThumb: 'img/food-delivery/category/06.jpg',
-        strMeal: 'Noodles6',
-        precio: 60000,
-    }
-
-];
-
-let crearTarjeta = (meal) => {
-    const imagen = document.createElement('img');
-    imagen.src = meal.strMealThumb;
-    imagen.classList.add('card-img-top');
-
-    //enlace de imagen
-    const enlaceImagen = document.createElement('a');
-    enlaceImagen.href = 'javascript:void(0)';
-    enlaceImagen.dataset.id = `meal_${meal.idMeal}`;
-    enlaceImagen.dataset.index = `meal_${meal.idMeal}`;
-    enlaceImagen.appendChild(imagen);
-
-    //titulo
-    const titulo = document.createElement('h3');
-    titulo.textContent = meal.strMeal;
-    titulo.classList.add('h5', 'mt-1', 'card-body', 'py-2', 'text-center');
-
-    //precio
-    const precioPlato = document.createElement('p');
-    precioPlato.textContent = '15.000';
-    precioPlato.classList.add('h5', 'py-2', 'text-center');
-
-    // crear div
-    const info = document.createElement('div');
-    info.classList.add('info-cardcard', 'border-0', 'box-shadow');
-    info.appendChild(enlaceImagen)
-    info.appendChild(titulo);
-    info.appendChild(precioPlato);
-
-    //crear card
-    const cardPlato = document.createElement('div');
-    cardPlato.classList.add('col-md-4', 'col-sm-6', 'mb-grid-gutter');
-    cardPlato.appendChild(info);
-
-    //agregar a contenedor
-    const listadoDeComidas = document.querySelector('#listadoDeComidas');
-    listadoDeComidas.appendChild(cardPlato);
-    console.log(listadoDeComidas);
 
 
-}
+fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
+    .then(meals => meals.json())
+    .then(meal => {
+        mostrarMenu = meal.meals;
+        console.log(mostrarMenu);
+        mostrarMenu.map((meal) => {
 
-listado_comidas.forEach((meal, index) => {
-    console.log("Meal", meal, index);
-    crearTarjeta(meal);
-});
+            //crear imagen          
+            const imagen = document.createElement('img');
+            imagen.src = meal.strMealThumb;
+            imagen.classList.add('card-img-top');
 
-// fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
-//     .then(meals => meals.json())
-//     .then(meal => {
-//         mostrarMenu = meal.meals;
-//         console.log(mostrarMenu);
-//         mostrarMenu.map((meal) => {
+            //enlace de imagen
+            const enlaceImagen = document.createElement('a');
+            enlaceImagen.href = '#';
+            enlaceImagen.id = 1;
+            enlaceImagen.appendChild(imagen);
 
-//             //crear imagen          
-//             const imagen = document.createElement('img');
-//             imagen.src = meal.strMealThumb;
-//             imagen.classList.add('card-img-top');
+            //titulo
+            const titulo = document.createElement('h3');
+            titulo.textContent = meal.strMeal;
+            titulo.classList.add('h5', 'mt-1', 'card-body', 'py-2', 'text-center');
 
-//             //enlace de imagen
-//             const enlaceImagen = document.createElement('a');
-//             enlaceImagen.href = '#';
-//             enlaceImagen.id = 1;
-//             enlaceImagen.appendChild(imagen);
+            //precio
+            const precioPlato = document.createElement('p');
+            precioPlato.textContent = '15.000';
+            precioPlato.classList.add('h5', 'py-2', 'text-center');
 
-//             //titulo
-//             const titulo = document.createElement('h3');
-//             titulo.textContent = meal.strMeal;
-//             titulo.classList.add('h5', 'mt-1', 'card-body', 'py-2', 'text-center');
+            //crear div
+            const info = document.createElement('div');
+            info.classList.add('info-cardcard', 'border-0', 'box-shadow');
+            info.appendChild(enlaceImagen)
+            info.appendChild(titulo);
+            info.appendChild(precioPlato);
 
-//             //precio
-//             const precioPlato = document.createElement('p');
-//             precioPlato.textContent = '15.000';
-//             precioPlato.classList.add('h5', 'py-2', 'text-center');
+            //crear card
+            const cardPlato = document.createElement('div');
+            cardPlato.classList.add('col-md-4', 'col-sm-6', 'mb-grid-gutter');
+            cardPlato.appendChild(info);
 
-//             //crear div
-//             const info = document.createElement('div');
-//             info.classList.add('info-cardcard', 'border-0', 'box-shadow');
-//             info.appendChild(enlaceImagen)
-//             info.appendChild(titulo);
-//             info.appendChild(precioPlato);
+            //agregar a contenedor
+            const listadoDeComidas = document.querySelector('#listadoDeComidas');
+            listadoDeComidas.appendChild(cardPlato);
+            console.log(listadoDeComidas);
 
-//             //crear card
-//             const cardPlato = document.createElement('div');
-//             cardPlato.classList.add('col-md-4', 'col-sm-6', 'mb-grid-gutter');
-//             cardPlato.appendChild(info);
-
-//             //agregar a contenedor
-//             const listadoDeComidas = document.querySelector('#listadoDeComidas');
-//             listadoDeComidas.appendChild(cardPlato);
-//             console.log(listadoDeComidas);
-
-//         });
-//     })
+        });
+    })
 
 
 
@@ -348,13 +257,7 @@ function carritoHTML() {
     vaciarCarrito();
     articulosCarrito.forEach(menuSelecccionado => {
         //aqui hago una destructuring del objeto
-        const {
-            imagen,
-            titulo,
-            precio,
-            cantidad,
-            id
-        } = menuSelecccionado;
+        const { imagen, titulo, precio, cantidad, id } = menuSelecccionado;
         let precioTotal = (menuSelecccionado.cantidad * menuSelecccionado.precio);
         //aqui estoy imprimiendo en el html los elemento dentro del carrito
         const row = document.createElement('div');
