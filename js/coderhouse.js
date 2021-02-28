@@ -36,60 +36,17 @@ let mostrarMenu = [];
 
 //llamar por ajax menu
 
-let listado_comidas = [{
-        idMeal: 1,
-        strMealThumb: 'img/food-delivery/category/01.jpg',
-        strMeal: 'Noodles1',
-        precio: 10000,
-    },
-
-    {
-        idMeal: 2,
-        strMealThumb: 'img/food-delivery/category/02.jpg',
-        strMeal: 'Noodles2',
-        precio: 20000,
-    },
-
-    {
-        idMeal: 3,
-        strMealThumb: 'img/food-delivery/category/03.jpg',
-        strMeal: 'Noodles3',
-        precio: 30000,
-    },
-
-    {
-        idMeal: 4,
-        strMealThumb: 'img/food-delivery/category/04.jpg',
-        strMeal: 'Noodles4',
-        precio: 40000,
-    },
-
-    {
-        idMeal: 5,
-        strMealThumb: 'img/food-delivery/category/05.jpg',
-        strMeal: 'Noodles5',
-        precio: 50000,
-    },
-
-    {
-        idMeal: 6,
-        strMealThumb: 'img/food-delivery/category/06.jpg',
-        strMeal: 'Noodles6',
-        precio: 60000,
-    }
-
-];
-
-let crearTarjeta = (meal) => {
+let crearTarjeta = (meal, index) => {
     const imagen = document.createElement('img');
     imagen.src = meal.strMealThumb;
     imagen.classList.add('card-img-top');
 
     //enlace de imagen
     const enlaceImagen = document.createElement('a');
+    enlaceImagen.classList.add("card-meal");
     enlaceImagen.href = 'javascript:void(0)';
     enlaceImagen.dataset.id = `meal_${meal.idMeal}`;
-    enlaceImagen.dataset.index = `meal_${meal.idMeal}`;
+    enlaceImagen.dataset.index = index;
     enlaceImagen.appendChild(imagen);
 
     //titulo
@@ -99,7 +56,7 @@ let crearTarjeta = (meal) => {
 
     //precio
     const precioPlato = document.createElement('p');
-    precioPlato.textContent = '15.000';
+    precioPlato.textContent = meal.precio ? meal.precio : 15000;
     precioPlato.classList.add('h5', 'py-2', 'text-center');
 
     // crear div
@@ -118,64 +75,128 @@ let crearTarjeta = (meal) => {
     const listadoDeComidas = document.querySelector('#listadoDeComidas');
     listadoDeComidas.appendChild(cardPlato);
     console.log(listadoDeComidas);
-
-
 }
 
-listado_comidas.forEach((meal, index) => {
-    console.log("Meal", meal, index);
-    crearTarjeta(meal);
-});
+let crearTarjetas = (array = []) => {
+    array.forEach((meal, index) => {
+        console.log("Meal", meal, index, (index + 1) === array.length);
+        crearTarjeta(meal, index);
 
-// fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
-//     .then(meals => meals.json())
-//     .then(meal => {
-//         mostrarMenu = meal.meals;
-//         console.log(mostrarMenu);
-//         mostrarMenu.map((meal) => {
+        if ((index + 1) === array.length) {
+            document.querySelectorAll('.card-meal').forEach(item => {
+                item.addEventListener('click', event => {
+                    let index = item.getAttribute('data-index');
+                    let meal = array[index];
+                    console.log("Comida Seleccionada", meal);
+                    leerDatosMenu2(meal);
+                });
+            });
+        }
+    });
+}
 
-//             //crear imagen          
-//             const imagen = document.createElement('img');
-//             imagen.src = meal.strMealThumb;
-//             imagen.classList.add('card-img-top');
+// crearTarjetas(listado_comidas);
 
-//             //enlace de imagen
-//             const enlaceImagen = document.createElement('a');
-//             enlaceImagen.href = '#';
-//             enlaceImagen.id = 1;
-//             enlaceImagen.appendChild(imagen);
-
-//             //titulo
-//             const titulo = document.createElement('h3');
-//             titulo.textContent = meal.strMeal;
-//             titulo.classList.add('h5', 'mt-1', 'card-body', 'py-2', 'text-center');
-
-//             //precio
-//             const precioPlato = document.createElement('p');
-//             precioPlato.textContent = '15.000';
-//             precioPlato.classList.add('h5', 'py-2', 'text-center');
-
-//             //crear div
-//             const info = document.createElement('div');
-//             info.classList.add('info-cardcard', 'border-0', 'box-shadow');
-//             info.appendChild(enlaceImagen)
-//             info.appendChild(titulo);
-//             info.appendChild(precioPlato);
-
-//             //crear card
-//             const cardPlato = document.createElement('div');
-//             cardPlato.classList.add('col-md-4', 'col-sm-6', 'mb-grid-gutter');
-//             cardPlato.appendChild(info);
-
-//             //agregar a contenedor
-//             const listadoDeComidas = document.querySelector('#listadoDeComidas');
-//             listadoDeComidas.appendChild(cardPlato);
-//             console.log(listadoDeComidas);
-
-//         });
-//     })
+fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
+    .then(meals => meals.json())
+    .then(data => {
+        console.log("FETCH DATA", data);
+        crearTarjetas(data.meals);
+    });
 
 
+// let listado_comidas = [{
+//         idMeal: 1,
+//         strMealThumb: 'img/food-delivery/category/01.jpg',
+//         strMeal: 'Noodles1',
+//         precio: 10000,
+//     },
+
+//     {
+//         idMeal: 2,
+//         strMealThumb: 'img/food-delivery/category/02.jpg',
+//         strMeal: 'Noodles2',
+//         precio: 20000,
+//     },
+
+//     {
+//         idMeal: 3,
+//         strMealThumb: 'img/food-delivery/category/03.jpg',
+//         strMeal: 'Noodles3',
+//         precio: 30000,
+//     },
+
+//     {
+//         idMeal: 4,
+//         strMealThumb: 'img/food-delivery/category/04.jpg',
+//         strMeal: 'Noodles4',
+//         precio: 40000,
+//     },
+
+//     {
+//         idMeal: 5,
+//         strMealThumb: 'img/food-delivery/category/05.jpg',
+//         strMeal: 'Noodles5',
+//         precio: 50000,
+//     },
+
+//     {
+//         idMeal: 6,
+//         strMealThumb: 'img/food-delivery/category/06.jpg',
+//         strMeal: 'Noodles6',
+//         precio: 60000,
+//     }
+
+// ];
+
+let leerDatosMenu2 = (meal) => {
+
+    const infoMenu = {
+        imagen: meal.strMealThumb ? meal.strMealThumb : '#',
+        titulo: meal.strMeal ? meal.strMeal : 'No Disponible',
+        precio: meal.precio ? meal.precio : 15000,
+        id: meal.idMeal ? meal.idMeal : '',
+        cantidad: 1
+    }
+
+    console.log("leerDatosMenu2 Meal", {
+        meal: meal,
+        infoMenu: infoMenu
+    });
+
+    // creo una funcion para saber si exite el mismo menu y este pueda sumar las cantidades
+    if (articulosCarrito.some(menuSelecccionado => menuSelecccionado.id === infoMenu.id)) {
+        const menuSelecccionado = articulosCarrito.map(menuSelecccionado => {
+            if (menuSelecccionado.id === infoMenu.id) {
+                menuSelecccionado.cantidad++;
+                return menuSelecccionado;
+            } else {
+                return menuSelecccionado;
+            }
+        })
+        articulosCarrito = [...menuSelecccionado];
+    } else {
+        articulosCarrito = [...articulosCarrito, infoMenu];
+    }
+
+    carritoHTML();
+}
+
+// Elimina el curso del carrito en el DOM
+let eliminarMenu = (e) => {
+    e.preventDefault();
+
+    console.log("eliminarMenu Event", {
+        id: e.target.getAttribute('data-id'),
+        articulosCarrito: articulosCarrito
+    });
+
+    if (e.target.classList.contains('borrar-curso')) {
+        const MenuId = e.target.getAttribute('data-id')
+        articulosCarrito = articulosCarrito.filter(menuSelecccionado => menuSelecccionado.id != MenuId);
+        carritoHTML();
+    }
+}
 
 
 // fetch('https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast')
@@ -219,7 +240,7 @@ function cargarEventListeners() {
     ubicacion.addEventListener('blur', validarFormulario);
     menu.addEventListener('blur', validarMenu);
     // Dispara cuando se presiona "Agregar Carrito"
-    listaMenu.addEventListener('click', agregarMenu);
+    //listaMenu.addEventListener('click', agregarMenu);
     carrito.addEventListener('click', eliminarMenu);
     vaciarCarritoBtn.addEventListener('click', () => {
         articulosCarrito = [];
@@ -298,50 +319,6 @@ function VerPrecios() {
 
 
 // Lee los datos del menu
-
-function leerDatosMenu(menuSelecccionado) {
-
-    const infoMenu = {
-        imagen: menuSelecccionado.querySelector('img').src,
-        titulo: menuSelecccionado.querySelector('h3').textContent,
-        precio: menuSelecccionado.querySelector('.precio').textContent,
-        id: menuSelecccionado.querySelector('a').getAttribute('data-id'),
-        cantidad: 1
-    }
-
-    //creo una funcion para saber si exite el mismo menu y este pueda sumar las cantidades
-    if (articulosCarrito.some(menuSelecccionado => menuSelecccionado.id === infoMenu.id)) {
-        const menuSelecccionado = articulosCarrito.map(menuSelecccionado => {
-            if (menuSelecccionado.id === infoMenu.id) {
-                menuSelecccionado.cantidad++;
-                return menuSelecccionado;
-            } else {
-                return menuSelecccionado;
-            }
-        })
-        articulosCarrito = [...menuSelecccionado];
-    } else {
-        articulosCarrito = [...articulosCarrito, infoMenu];
-    }
-
-    carritoHTML();
-}
-
-
-
-// Elimina el curso del carrito en el DOM
-function eliminarMenu(e) {
-    e.preventDefault();
-    if (e.target.classList.contains('borrar-curso')) {
-        // e.target.parentElement.parentElement.remove();
-        const MenuId = e.target.getAttribute('data-id')
-
-        // // Eliminar del arreglo del carrito
-        articulosCarrito = articulosCarrito.filter(menuSelecccionado => menuSelecccionado.id !== MenuId);
-        carritoHTML();
-    }
-
-}
 
 // Muestra el menu seleccionado en el Carrito
 function carritoHTML() {
